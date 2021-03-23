@@ -191,11 +191,13 @@ function parseTransform(data: any): mat4 {
   });
 }
 
-function parseMeshMetadata(data: any): MultiscaleMeshMetadata {
+function parseMeshMetadata(data: any): MultiscaleMeshMetadata|undefined {
   verifyObject(data);
   const t = verifyObjectProperty(data, '@type', verifyString);
-  if (t !== 'neuroglancer_multilod_draco') {
-    throw new Error(`Unsupported mesh type: ${JSON.stringify(t)}`);
+  if (t === 'neuroglancer_legacy_mesh') {
+      return undefined;
+  } else if (t !== 'neuroglancer_multilod_draco') {
+      throw new Error(`Unsupported mesh type: ${JSON.stringify(t)}`);
   }
   const lodScaleMultiplier =
       verifyObjectProperty(data, 'lod_scale_multiplier', verifyFinitePositiveFloat);
