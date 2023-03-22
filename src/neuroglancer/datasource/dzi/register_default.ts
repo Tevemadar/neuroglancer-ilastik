@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {PrecomputedDataSource} from 'neuroglancer/datasource/precomputed/frontend';
+import {DZIDataSource} from 'neuroglancer/datasource/dzi/frontend';
 import {registerProvider} from 'neuroglancer/datasource/default_provider';
 
-registerProvider('precomputed', () => new PrecomputedDataSource());
+registerProvider('dzi', () => new DZIDataSource());
