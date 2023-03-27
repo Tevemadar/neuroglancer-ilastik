@@ -61,13 +61,14 @@ const DEFAULT_DATA_SOURCES = exports.DEFAULT_DATA_SOURCES = [
       'neuroglancer/async_computation/decode_jpeg',
     ],
   },
-  {
-    source: 'neuroglancer/datasource/dzi',
-    asyncComputation: [
-      'neuroglancer/async_computation/decode_jpeg',
-      'neuroglancer/async_computation/decode_gzip',
-    ],
-  },
+  'neuroglancer/datasource/dzi',
+  //{
+  //  source: 'neuroglancer/datasource/dzi',
+  //  asyncComputation: [
+  //    'neuroglancer/async_computation/decode_jpeg',
+  //    'neuroglancer/async_computation/decode_gzip',
+  //  ],
+  //},
   {
     source: 'neuroglancer/datasource/precomputed',
     asyncComputation: [
