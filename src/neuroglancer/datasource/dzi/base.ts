@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2016 Google Inc.
+ * Copyright 2023 Gergely Csucs
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,20 +14,11 @@
  * limitations under the License.
  */
 
-export enum VolumeChunkEncoding {
-  RAW,
-  JPEG,
-  COMPRESSED_SEGMENTATION
-}
-
 export class VolumeChunkSourceParameters {
-  url: string;
-  encoding: VolumeChunkEncoding;
+  urlbase: string;
+  tilesize: number;
+  overlap: number;
+  format: string;
 
-  static RPC_ID = 'precomputed/VolumeChunkSource';
-}
-
-export enum DataEncoding {
-  RAW = 0,
-  GZIP = 1,
+  static RPC_ID = 'dzi/VolumeChunkSource';
 }
